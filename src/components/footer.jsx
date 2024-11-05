@@ -55,7 +55,7 @@ function Footer(){
         </div>
 
         <div className="text-center mt-12 border-t border-gray-700 pt-6">
-          <p className="text-sm">&copy; {new Date().getFullYear()} IBS Bank. All rights reserved.</p>
+          <p className="text-sm">&copy; {new Date().getFullYear()} Dalkor Solution. All rights reserved.</p>
         </div>
       </div>
     </footer>

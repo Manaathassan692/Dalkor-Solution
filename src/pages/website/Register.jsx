@@ -1,100 +1,122 @@
 import React, { useState } from 'react';
 
 const Register = () => {
-    const [meterNumber, setMeterNumber] = useState('');
-    const [usage, setUsage] = useState(null);
-    const [amount, setAmount] = useState('');
+    const [provider, setProvider] = useState('');
     const [tokenNumber, setTokenNumber] = useState('');
+    const [paymentMethod, setPaymentMethod] = useState('');
+    const [error, setError] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const [userData, setUserData] = useState(null); // State cusub
 
-    const handleCheckUsage = () => {
-        const mockUsage = Math.floor(Math.random() * 100); // Mock response
-        setUsage(mockUsage);
+    // Tusaalaha xogta user-ka
+    const userDatabase = {
+        '12345': { Name: 'Ali', dagmo: 'Hodan', houseNo: 'A12' },
+        '67890': { Name: 'Aisha', dagmo: 'Warta Nabadda', houseNo: 'B34' },
+        'abcde': { Name: 'Mohamed', dagmo: 'Xamar Weyne', houseNo: 'C56' }
     };
 
-    const handlePurchase = () => {
-        alert(`Token purchased for ${amount} kW`);
-        setAmount(''); // Clear the input after alert
+    const handleTokenCheck = () => {
+        if (userDatabase[tokenNumber]) {
+            setError('');
+            setSuccessMessage(`Token ${tokenNumber} is valid! Proceed to payment.`);
+            setUserData(userDatabase[tokenNumber]); // Kaydi xogta user-ka
+        } else {
+            setError('Your token number is not registered or does not exist.');
+            setSuccessMessage('');
+            setUserData(null); // Nadiifi xogta user-ka haddii token-ka qaldan
+        }
     };
 
-    const handleTopUp = () => {
-        alert(`Top up successful for Meter: ${meterNumber} with Token: ${tokenNumber}`);
-        setMeterNumber(''); // Clear the meter number input
-        setTokenNumber(''); // Clear the token number input
+    const handlePayment = () => {
+        if (!provider || !tokenNumber || !paymentMethod) {
+            setError('Please fill in all fields before proceeding.');
+            return;
+        }
+
+        if (paymentMethod === 'EVC' && !userDatabase[tokenNumber]) {
+            alert('Invalid Token Number. Please check and try again.');
+            return;
+        }
+
+        alert(`Payment of token ${tokenNumber} made using ${paymentMethod} with provider ${provider}.`);
+        setProvider('');
+        setTokenNumber('');
+        setPaymentMethod('');
+        setError('');
+        setSuccessMessage('');
+        setUserData(null); // Nadiifi xogta user-ka kadib lacag bixinta
     };
 
     return (
-        <div className="container mx-auto p-6">
-            <h1 className="text-2xl font-bold mb-6">Prepaid Electricity Management</h1>
-            <div className="flex flex-wrap -mx-4">
-                {/* Monitor Electricity Usage */}
-                <div className="flex-1 p-4 h-80">
-                    <div className="p-6 bg-white rounded-lg shadow-lg h-full">
-                        <h2 className="text-lg font-semibold mb-4">Monitor Electricity Usage</h2>
-                        <input
-                            type="text"
-                            placeholder="Enter Meter Number"
-                            value={meterNumber}
-                            onChange={(e) => setMeterNumber(e.target.value)}
-                            className="border p-2 rounded-md w-full mb-4"
-                        />
-                        <button
-                            onClick={handleCheckUsage}
-                            className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-                        >
-                            Check Usage
-                        </button>
-                        {usage !== null && (
-                            <p className="mt-4">Remaining kW: <strong>{usage}</strong></p>
-                        )}
-                    </div>
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+            <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
+                <h1 className="text-3xl font-bold text-center mb-6 text-gray-700">Prepaid Electricity Management</h1>
+                
+                <div className="mb-6">
+                    <label className="block text-gray-600 mb-2">Choose Your Provider</label>
+                    <select
+                        value={provider}
+                        onChange={(e) => setProvider(e.target.value)}
+                        className="border border-gray-300 p-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        <option value="">Select a provider</option>
+                        <option value="Beco">Beco</option>
+                        <option value="Mugadishu">Mugadishu</option>
+                        <option value="Sompower">Sompower</option>
+                        <option value="NecoSom">NecoSom</option>
+                    </select>
                 </div>
 
-                {/* Purchase Token */}
-                <div className="flex-1 p-4 h-80">
-                    <div className="p-6 bg-white rounded-lg shadow-lg h-full">
-                        <h2 className="text-lg font-semibold mb-4">Purchase Token</h2>
-                        <input
-                            type="number"
-                            placeholder="Enter Amount in kW"
-                            value={amount}
-                            onChange={(e) => setAmount(e.target.value)}
-                            className="border p-2 rounded-md w-full mb-4"
-                        />
-                        <button
-                            onClick={handlePurchase}
-                            className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
-                        >
-                            Purchase Token
-                        </button>
-                    </div>
+                <div className="mb-6">
+                    <label className="block text-gray-600 mb-2">Enter Your Token Number</label>
+                    <input
+                        type="text"
+                        placeholder="Enter Token Number"
+                        value={tokenNumber}
+                        onChange={(e) => setTokenNumber(e.target.value)}
+                        className="border border-gray-300 p-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    <button
+                        onClick={handleTokenCheck}
+                        className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 w-full mt-2"
+                    >
+                        Check Token
+                    </button>
                 </div>
 
-                {/* Top Up Electricity */}
-                <div className="flex-1 p-4 h-80">
-                    <div className="p-6 bg-white rounded-lg shadow-lg h-full">
-                        <h2 className="text-lg font-semibold mb-4">Top Up Electricity</h2>
-                        <input
-                            type="text"
-                            placeholder="Enter Meter Number"
-                            value={meterNumber}
-                            onChange={(e) => setMeterNumber(e.target.value)}
-                            className="border p-2 rounded-md w-full mb-4"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Enter Token Number"
-                            value={tokenNumber}
-                            onChange={(e) => setTokenNumber(e.target.value)}
-                            className="border p-2 rounded-md w-full mb-4"
-                        />
-                        <button
-                            onClick={handleTopUp}
-                            className="bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-600"
-                        >
-                            Top Up
-                        </button>
+                {userData && (
+                    <div className="mb-6 p-4 bg-green-50 border border-green-300 rounded-md">
+                        <h2 className="font-bold text-gray-700">User Information:</h2>
+                        <p><strong>Name:</strong> {userData.Name}</p>
+                        <p><strong>Dagmo:</strong> {userData.dagmo}</p>
+                        <p><strong>House No:</strong> {userData.houseNo}</p>
                     </div>
+                )}
+
+                <div className="mb-6">
+                    <label className="block text-gray-600 mb-2">Choose Payment Method</label>
+                    <select
+                        value={paymentMethod}
+                        onChange={(e) => setPaymentMethod(e.target.value)}
+                        className="border border-gray-300 p-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        <option value="">Select Payment Method</option>
+                        <option value="EVC">EVC</option>
+                        <option value="ZAAD">ZAAD</option>
+                        <option value="SALAAM BANK">SALAAM BANK</option>
+                        <option value="E-DAHAB">E-DAHAB</option>
+                    </select>
                 </div>
+
+                <button
+                    onClick={handlePayment}
+                    className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 w-full"
+                >
+                    Make Payment
+                </button>
+
+                {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
+                {successMessage && <p className="text-green-500 mt-4 text-center">{successMessage}</p>}
             </div>
         </div>
     );

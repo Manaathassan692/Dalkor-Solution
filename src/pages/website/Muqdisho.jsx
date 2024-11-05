@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-function SomBank(){
+function Muqdisho1(){
     return <>
     <div class="bg-white shadow">
         <div class="max-w-6xl mx-auto flex items-center justify-between p-4 ">
@@ -94,4 +94,4 @@ function SomBank(){
     </>
 
 }
-export default SomBank
+export default Muqdisho1

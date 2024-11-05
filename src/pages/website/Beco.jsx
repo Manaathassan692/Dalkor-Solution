@@ -17,7 +17,7 @@ function Beco(){
         </nav>
 
         <div>
-        <Link to="/premier/regiter"><button class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition duration-200">Prepaid</button></Link>
+        <Link to="/beco/prepaid"><button class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition duration-200">Prepaid</button></Link>
         </div>
     </div>
 </div>

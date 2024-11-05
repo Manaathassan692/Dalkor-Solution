@@ -32,7 +32,7 @@ class Part3 extends React.Component {
                 Discover the wide range of services we offer to help you manage your finances effectively.
               </p>
               <a
-                href="Premier"
+                href="/BecoPowering"
                 className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200"
               >
                 Learn More
@@ -48,7 +48,7 @@ class Part3 extends React.Component {
               alt="Customer Testimonials"
             />
             <div className="p-4">
-              <h3 className="text-2xl font-semibold mb-2">Mugadishu Power </h3>
+              <h3 className="text-2xl font-semibold mb-2">Mugadish Power </h3>
               <p className="text-gray-600 mb-4">
               Discover the wide range of services we offer to help you manage your finances effectively..
               </p>
@@ -74,7 +74,7 @@ class Part3 extends React.Component {
               Discover the wide range of services we offer to help you manage your finances effectively.
               </p>
               <a
-                href="/Amal"
+                href="/NecoSom2s"
                 className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200"
               >
                 Learn More
@@ -86,7 +86,7 @@ class Part3 extends React.Component {
           <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
             <img
               className="rounded-t-lg w-full h-48 object-cover"
-              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEhAPEA8SEA4QFhERERIXDxcQEA8QFhUWFxUWFxcdHCksGyYmGxgXITEhKCktOi4uIx8zODMsNygtLzcBCgoKDg0OGhAQGi0lICUtLS0wLy0tLS0tLS01LS0tLS0tLy0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAMgAyAMBEQACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABgEDBAUHAgj/xABGEAABAwIEAwUCCQgJBQAAAAABAAIDBBEFEiExBhNBBxQiUWEyoTNCUnGBkbHB0RUWU2KCkpOiIyVDw9LT4eLwFyQ0VYT/xAAaAQEAAgMBAAAAAAAAAAAAAAAAAwQBAgUG/8QAMREBAAICAQMEAQEHAwUAAAAAAAECAxEEEiExBRNBUSIyFBUjYYGx4ZHw8UJTYnHB/9oADAMBAAIRAxEAPwDuKAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBdAQEBAQEBAQEBAQEBAQEBAQEBAQEFEBPJ8tNjPEEVOHf2j2kAtB2Jva56bFVc/Krijt3ld43CvmmI8RKNU2J4hXucI5BTwN1e8DRg33OpP1KrhyZs8/j2h0M3H4/Eru8blDMU4njmf3amqq0OzZGz3M5qCbWszOMgv5An7F63i+lxhr7mTvP8AZwc/LtedU7QV9ZX0TMtJXurXjxzzMn54hy3tGIyTYdS4jyGlje1ixYs07yV19K1rTHhl8P8Aa/MwhlbEJWdZGDJIP2dj7lpyfSa63jkpnmO1nWsNxOGobmifmtbM0jK+MkXs9p1abdCuHkxWxzq0LMTEsxRMqoCyCAgICAgICAgICAgICAgogj3EWLuaRTw/DO67265R6kKjyc+v4dPLo8PjRMe7k8Q1zOGXlhY4EtdMJHG/iMQYffc2UMcO0wntz9W6o+IXuKqUxYbNDE5s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pglE7mVokjOSR+lxo8Xdss4cXe/V4Y5OavRj6J7wYRw22CV0hdmA+CHVgO9/VYw8SuO/VP8ARnkeoWy44p4+/wCbzgdM9tVVucxzWuPhcRYO8R2TBS1ctp+zk5KWwY6xPeEW7ZsKqKjuXIgkmyGbNkYXZb8u17D0K9D6flrji+505GWPDpTRoFzZlLD0sMubdpOHVYraCup6V9SyntmYy5OZr8wBte1772XS4d8ft2x2traHJExO4Xvz9xL/ANBUfvv/AMpY/ZMP/cg9y3nTA4Xpa2qxh2IzUUlJFyyCH335YjABIF/PZb5r46cf2q23/wAta1mb70lvaFghraGaJrc0rBzYgBcl7NbD5xdv0qpxM3t5In4SZK9UNV2XYHLFBNPVtd3mqdZ4kFn8pgyNBB+n3Kbm562tEU8Qxjr22j/CnBtRFiZZKx/caJ8s1OSDy3OflyZT1Psk+rVYz8ulsHb9UtK0/JM+0mkkmw2qiijdJI7lZWNbmc600ZNh8wJVLh2iuas2SZI/GUOwDiCtpaeGmOATSmJobnN2l/rblH7VdzYqZLzb3df7/wDaKs2iPCVcNcU1dVMIZsKmpI8rnc1z3FoItZtjGN/nVLLgpSu4vtLF9z3hpMRwF8+PNklpTLRmOznOizw5hE61ydN7KzTPFeL0xPf/AC0mszdY4z4E5Mgr8Op45C03lpDEHxvGxLGfcPoWeNzOqJpln+pfFHwm/C1aJoGf9q+jLPC6B0RjDD+roAR6hUM9em06naWk9m6UTYsgWQECyClk0KoCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg//2Q=="
+              src="https://hadhwanaagnews.ca/uploads/article/photo/IMG_0E54E5-C0E6A5-1514C5-C9CCFF-E5484D-A31335.jpg"
               alt="Contact Us"
             />
             <div className="p-4">
@@ -95,7 +95,7 @@ class Part3 extends React.Component {
               Discover the wide range of services we offer to help you manage your finances effectively.
               </p>
               <a
-                href="IBS"
+                href="/Somp"
                 className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200"
               >
                 Learn More
